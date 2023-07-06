@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>问天项目组</title>
+        <link rel="shortcut icon" href="imgs/01699f56434ffe6ac7259e0fe866bf.png">
+        <link rel="stylesheet" href="css/lx.css">
+        <script src="1/js/jquery-1.10.2.js"></script>
+        <link href="lc/css/style.css" rel="stylesheet" type="text/css" />
+        <style>
+            @import url("1/css/css.css");
+            .container {
+            margin: auto;
+            padding: 0 1rem;
+            max-width: 71.25rem;
+            width: 100%;
+            }
+
+            .grid {
+            display: flex;
+            flex-direction: column;
+            flex-flow: row wrap;
+            }
+            .grid > [class*=column-] {
+            display: block;
+            }
+
+            .first {
+            order: -1;
+            }
+
+            .last {
+            order: 12;
+            }
+
+            .align-top {
+            align-items: start;
+            }
+
+            .align-center {
+            align-items: center;
+            }
+
+            .align-bottom {
+            align-items: end;
+            }
+
+            .column-xs-1 {
+            flex-basis: 8.3333333333%;
+            max-width: 8.3333333333%;
+            }
+
+            .column-xs-2 {
+            flex-basis: 16.6666666667%;
+            max-width: 16.6666666667%;
+            }
+
+            .column-xs-3 {
+            flex-basis: 25%;
+            max-width: 25%;
+            }
+
+            .column-xs-4 {
+            flex-basis: 33.3333333333%;
+            max-width: 33.3333333333%;
+            }
+
+            .column-xs-5 {
+            flex-basis: 41.6666666667%;
+            max-width: 41.6666666667%;
+            }
+
+            .column-xs-6 {
+            flex-basis: 50%;
+            max-width: 50%;
+            }
+
+            .column-xs-7 {
+            flex-basis: 58.3333333333%;
+            max-width: 58.3333333333%;
+            }
+
+            .column-xs-8 {
+            flex-basis: 66.6666666667%;
+            max-width: 66.6666666667%;
+            }
+
+            .column-xs-9 {
+            flex-basis: 75%;
+            max-width: 75%;
+            }
+
+            .column-xs-10 {
+            flex-basis: 83.3333333333%;
+            max-width: 83.3333333333%;
+            }
+
+            .column-xs-11 {
+            flex-basis: 91.6666666667%;
+            max-width: 91.6666666667%;
+            }
+
+            .column-xs-12 {
+            flex-basis: 100%;
+            max-width: 100%;
+            }
+
+            @media (min-width: 48rem) {
+            .column-sm-1 {
+                flex-basis: 8.3333333333%;
+                max-width: 8.3333333333%;
+            }
+
+            .column-sm-2 {
+                flex-basis: 16.6666666667%;
+                max-width: 16.6666666667%;
+            }
+
+            .column-sm-3 {
+                flex-basis: 25%;
+                max-width: 25%;
+            }
+
+            .column-sm-4 {
+                flex-basis: 33.3333333333%;
+                max-width: 33.3333333333%;
+            }
+
+            .column-sm-5 {
+                flex-basis: 41.6666666667%;
+                max-width: 41.6666666667%;
+            }
+
+            .column-sm-6 {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+
+            .column-sm-7 {
+                flex-basis: 58.3333333333%;
+                max-width: 58.3333333333%;
+            }
+
+            .column-sm-8 {
+                flex-basis: 66.6666666667%;
+                max-width: 66.6666666667%;
+            }
+
+            .column-sm-9 {
+                flex-basis: 75%;
+                max-width: 75%;
+            }
+
+            .column-sm-10 {
+                flex-basis: 83.3333333333%;
+                max-width: 83.3333333333%;
+            }
+
+            .column-sm-11 {
+                flex-basis: 91.6666666667%;
+                max-width: 91.6666666667%;
+            }
+
+            .column-sm-12 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            }
+            @media (min-width: 62rem) {
+            .column-md-1 {
+                flex-basis: 8.3333333333%;
+                max-width: 8.3333333333%;
+            }
+
+            .column-md-2 {
+                flex-basis: 16.6666666667%;
+                max-width: 16.6666666667%;
+            }
+
+            .column-md-3 {
+                flex-basis: 25%;
+                max-width: 25%;
+            }
+
+            .column-md-4 {
+                flex-basis: 33.3333333333%;
+                max-width: 33.3333333333%;
+            }
+
+            .column-md-5 {
+                flex-basis: 41.6666666667%;
+                max-width: 41.6666666667%;
+            }
+
+            .column-md-6 {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+
+            .column-md-7 {
+                flex-basis: 58.3333333333%;
+                max-width: 58.3333333333%;
+            }
+
+            .column-md-8 {
+                flex-basis: 66.6666666667%;
+                max-width: 66.6666666667%;
+            }
+
+            .column-md-9 {
+                flex-basis: 75%;
+                max-width: 75%;
+            }
+
+            .column-md-10 {
+                flex-basis: 83.3333333333%;
+                max-width: 83.3333333333%;
+            }
+
+            .column-md-11 {
+                flex-basis: 91.6666666667%;
+                max-width: 91.6666666667%;
+            }
+
+            .column-md-12 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            }
+            @media (min-width: 75rem) {
+            .column-lg-1 {
+                flex-basis: 8.3333333333%;
+                max-width: 8.3333333333%;
+            }
+
+            .column-lg-2 {
+                flex-basis: 16.6666666667%;
+                max-width: 16.6666666667%;
+            }
+
+            .column-lg-3 {
+                flex-basis: 25%;
+                max-width: 25%;
+            }
+
+            .column-lg-4 {
+                flex-basis: 33.3333333333%;
+                max-width: 33.3333333333%;
+            }
+
+            .column-lg-5 {
+                flex-basis: 41.6666666667%;
+                max-width: 41.6666666667%;
+            }
+
+            .column-lg-6 {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+
+            .column-lg-7 {
+                flex-basis: 58.3333333333%;
+                max-width: 58.3333333333%;
+            }
+
+            .column-lg-8 {
+                flex-basis: 66.6666666667%;
+                max-width: 66.6666666667%;
+            }
+
+            .column-lg-9 {
+                flex-basis: 75%;
+                max-width: 75%;
+            }
+
+            .column-lg-10 {
+                flex-basis: 83.3333333333%;
+                max-width: 83.3333333333%;
+            }
+
+            .column-lg-11 {
+                flex-basis: 91.6666666667%;
+                max-width: 91.6666666667%;
+            }
+
+            .column-lg-12 {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            }
+            @supports (display: grid) {
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: auto;
+            }
+            .grid > [class*=column-] {
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .column-xs-1 {
+                grid-column-start: span 1;
+                grid-column-end: span 1;
+            }
+
+            .column-xs-2 {
+                grid-column-start: span 2;
+                grid-column-end: span 2;
+            }
+
+            .column-xs-3 {
+                grid-column-start: span 3;
+                grid-column-end: span 3;
+            }
+
+            .column-xs-4 {
+                grid-column-start: span 4;
+                grid-column-end: span 4;
+            }
+
+            .column-xs-5 {
+                grid-column-start: span 5;
+                grid-column-end: span 5;
+            }
+
+            .column-xs-6 {
+                grid-column-start: span 6;
+                grid-column-end: span 6;
+            }
+
+            .column-xs-7 {
+                grid-column-start: span 7;
+                grid-column-end: span 7;
+            }
+
+            .column-xs-8 {
+                grid-column-start: span 8;
+                grid-column-end: span 8;
+            }
+
+            .column-xs-9 {
+                grid-column-start: span 9;
+                grid-column-end: span 9;
+            }
+
+            .column-xs-10 {
+                grid-column-start: span 10;
+                grid-column-end: span 10;
+            }
+
+            .column-xs-11 {
+                grid-column-start: span 11;
+                grid-column-end: span 11;
+            }
+
+            .column-xs-12 {
+                grid-column-start: span 12;
+                grid-column-end: span 12;
+            }
+
+            @media (min-width: 48rem) {
+                .column-sm-1 {
+                grid-column-start: span 1;
+                grid-column-end: span 1;
+                }
+
+                .column-sm-2 {
+                grid-column-start: span 2;
+                grid-column-end: span 2;
+                }
+
+                .column-sm-3 {
+                grid-column-start: span 3;
+                grid-column-end: span 3;
+                }
+
+                .column-sm-4 {
+                grid-column-start: span 4;
+                grid-column-end: span 4;
+                }
+
+                .column-sm-5 {
+                grid-column-start: span 5;
+                grid-column-end: span 5;
+                }
+
+                .column-sm-6 {
+                grid-column-start: span 6;
+                grid-column-end: span 6;
+                }
+
+                .column-sm-7 {
+                grid-column-start: span 7;
+                grid-column-end: span 7;
+                }
+
+                .column-sm-8 {
+                grid-column-start: span 8;
+                grid-column-end: span 8;
+                }
+
+                .column-sm-9 {
+                grid-column-start: span 9;
+                grid-column-end: span 9;
+                }
+
+                .column-sm-10 {
+                grid-column-start: span 10;
+                grid-column-end: span 10;
+                }
+
+                .column-sm-11 {
+                grid-column-start: span 11;
+                grid-column-end: span 11;
+                }
+
+                .column-sm-12 {
+                grid-column-start: span 12;
+                grid-column-end: span 12;
+                }
+            }
+            @media (min-width: 62rem) {
+                .column-md-1 {
+                grid-column-start: span 1;
+                grid-column-end: span 1;
+                }
+
+                .column-md-2 {
+                grid-column-start: span 2;
+                grid-column-end: span 2;
+                }
+
+                .column-md-3 {
+                grid-column-start: span 3;
+                grid-column-end: span 3;
+                }
+
+                .column-md-4 {
+                grid-column-start: span 4;
+                grid-column-end: span 4;
+                }
+
+                .column-md-5 {
+                grid-column-start: span 5;
+                grid-column-end: span 5;
+                }
+
+                .column-md-6 {
+                grid-column-start: span 6;
+                grid-column-end: span 6;
+                }
+
+                .column-md-7 {
+                grid-column-start: span 7;
+                grid-column-end: span 7;
+                }
+
+                .column-md-8 {
+                grid-column-start: span 8;
+                grid-column-end: span 8;
+                }
+
+                .column-md-9 {
+                grid-column-start: span 9;
+                grid-column-end: span 9;
+                }
+
+                .column-md-10 {
+                grid-column-start: span 10;
+                grid-column-end: span 10;
+                }
+
+                .column-md-11 {
+                grid-column-start: span 11;
+                grid-column-end: span 11;
+                }
+
+                .column-md-12 {
+                grid-column-start: span 12;
+                grid-column-end: span 12;
+                }
+                }
+                @media (min-width: 75rem) {
+                .column-lg-1 {
+                grid-column-start: span 1;
+                grid-column-end: span 1;
+                }
+
+                .column-lg-2 {
+                grid-column-start: span 2;
+                grid-column-end: span 2;
+                }
+
+                .column-lg-3 {
+                grid-column-start: span 3;
+                grid-column-end: span 3;
+                }
+
+                .column-lg-4 {
+                grid-column-start: span 4;
+                grid-column-end: span 4;
+                }
+
+                .column-lg-5 {
+                grid-column-start: span 5;
+                grid-column-end: span 5;
+                }
+
+                .column-lg-6 {
+                grid-column-start: span 6;
+                grid-column-end: span 6;
+                }
+
+                .column-lg-7 {
+                grid-column-start: span 7;
+                grid-column-end: span 7;
+                }
+
+                .column-lg-8 {
+                grid-column-start: span 8;
+                grid-column-end: span 8;
+                }
+
+                .column-lg-9 {
+                grid-column-start: span 9;
+                grid-column-end: span 9;
+                }
+
+                .column-lg-10 {
+                grid-column-start: span 10;
+                grid-column-end: span 10;
+                }
+
+                .column-lg-11 {
+                grid-column-start: span 11;
+                grid-column-end: span 11;
+                }
+
+                .column-lg-12 {
+                grid-column-start: span 12;
+                grid-column-end: span 12;
+                }
+            }
+            }
+            * {
+            box-sizing: border-box;
+            }
+            *::before, *::after {
+            box-sizing: border-box;
+            }
+
+            body {
+            font-family: "Barlow", sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.5;
+            color: #787878;
+            background: #1F1F1F;
+            text-rendering: optimizeLegibility;
+            }
+
+            ul li {
+            margin: 0 1.5rem 0 0;
+            }
+
+            a {
+            color: #787878;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            }
+            a:hover {
+            color: #2e2e2e;
+            }
+            a.active {
+            color: #2e2e2e;
+            }
+
+            nav {
+            padding: 2.5rem 0 2.5rem 0;
+            }
+            nav ul {
+            display: flex;
+            justify-content: flex-start;
+            }
+            nav li {
+            font-size: 1.25rem;
+            }
+            nav li:nth-child(2) {
+            margin: 0;
+            }
+
+            #highlight {
+            color: #ea8478;
+            font-size: 1.25rem;
+            }
+
+            .gallery {
+            padding: 0 0 4rem 0;
+            }
+
+            .img-container {
+            width: 100%;
+            height: 500px;
+            cursor: pointer;
+            overflow: hidden;
+            }
+            .img-container:hover .img-content-hover {
+            display: block;
+            }
+
+            img {
+            width: 100%;
+            height: 500px;
+            -o-object-fit: cover;
+                object-fit: cover;
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            }
+            img:hover {
+            transform: scale(1.05);
+            }
+
+            .img-content-hover {
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            display: none;
+            padding: 1rem;
+            background: #fff;
+            font-weight: 400;
+            margin-top: 1.25rem;
+            margin-left: -2rem;
+            }
+
+            .title {
+            color: #2e2e2e;
+            font-size: 1.5rem;
+            font-weight: 700;
+            }
+
+            .category {
+            font-size: 1rem;
+            color: #787878;
+            }
+
+            .img-content {
+            display: none;
+            }
+
+            .social, .copyright {
+            margin: 1rem;
+            }
+
+            .social li {
+            display: inline-block;
+            }
+
+            footer {
+            padding: 1rem 0;
+            background: #f7f7f7;
+            text-align: center;
+            }
+
+            @supports (display: grid) {
+            .gallery .grid {
+                grid-gap: 1rem;
+            }
+            }
+            @media (min-width: 62rem) {
+            nav ul {
+                justify-content: flex-end;
+            }
+            }
+            @media screen and (max-width: 1024px) {
+            img:hover {
+                transform: none;
+            }
+
+            .img-container {
+                height: 100%;
+            }
+            .img-container:hover .img-content-hover {
+                display: none;
+            }
+
+            .img-content {
+                display: block;
+                padding: 1rem 0;
+            }
+            }
+            .a1{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .a2{
+                margin: auto;
+            }
+            body{
+                color: aliceblue;
+                background-image: linear-gradient(
+                    125deg,#2c3e50,#080f6c,#298029,#e774c3
+                );
+                background-size: 400%;
+                animation: bgmove 20s infinite;
+                }
+            @keyframes bgmove {
+                    0%{
+                        background-position: 0% 50%;
+                    }
+                    50%{
+                        background-position: 100% 50%;
+                    }
+                    100%{
+                        background-position: 0% 50%;
+                    }
+                }
+                .img1{
+                    width: 90%;
+                    height: 700px;
+                    margin: auto;
+                    margin-top: 30px;
+                }
+                .img2{
+                    width: 100%;
+                    height: 100%;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
+        <div class="a1" style="font-size: 50px;">问天项目组</div>
+<hr />
+        
+          <figure class="img-container img1">
+         <div class="img1"><img class="img2" src="imgs/s.jpg"></div>
+            <span class="img-content-hover">
+              <h2 class="title">成员：</h2>
+              <h3 class="category"><ul>
+                <li>全栈:龚建涛</li>
+                <li>图片渲染:覃欣兰</li>
+                <li>资源集合:王杰</li>
+                <li>最强辅助:尹虹源</li>
+              </ul></h3>
+            </span>
+          </figure>
+
+        <div>
+              <section class="gallery">
+                <div class="container">
+                  <div class="grid">
+                    <div class="column-xs-12 column-md-4">
+                      <figure class="img-container">
+                        <img src="imgs/23.png" style="width: 100%;">
+                 
+                        <span class="img-content-hover">
+                          <h2 class="title">选取首页片段</h2>
+                          <h3 class="category">航天知识</h3>
+                        </span>
+                      </figure>
+                    </div>
+                    <div class="column-xs-12 column-md-4">
+                      <figure class="img-container">
+                        <img src="imgs/01(1).png">
+                      
+                        <span class="img-content-hover">
+                          <h2 class="title">选取红色记忆片段</h2>
+                          <h3 class="category">为国鞠躬尽瘁的科学家</h3>
+                        </span>
+                      </figure>
+                    </div>
+                    <div class="column-xs-12 column-md-4">
+                      <figure class="img-container">
+                        <img src="imgs/05 190123(1).png">
+                 
+                        <span class="img-content-hover">
+                          <h2 class="title">选取科普与人物片段</h2>
+                          <h3 class="category">全世界第一个飞上太空的人！</h3>
+                        </span>
+                      </figure>
+                    </div>
+                    <div class="column-xs-12 column-md-6">
+                      <figure class="img-container">
+                        <img src="imgs/16(1).png">
+                
+                        <span class="img-content-hover">
+                          <h2 class="title">选取科普与人物片段</h2>
+                          <h3 class="category">赞！中国航天飞船</h3>
+                        </span>
+                      </figure>
+                    </div>
+                    <div class="column-xs-12 column-md-6">
+                      <figure class="img-container">
+                        <img src="imgs/2(1).png">
+                   
+                        <span class="img-content-hover">
+                          <h2 class="title">选取1970片段</h2>
+                          <h3 class="category">我国第一颗人造地球卫星东方红一号乘长征一号运载火箭飞向太空</h3>
+                        </span>
+                      </figure>
+                    </div>
+                    <div class="column-xs-12">
+                      <figure class="img-container">
+                        <img src="imgs/4.png">
+                       
+                        <span class="img-content-hover">
+                          <h2 class="title">选取科普与人物片段</h2>
+                          <h3 class="category">深入学习宣传贯彻党的二十大精神</h3>
+                        </span>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+              <div style="width:100%;margin-top: 50px;" class="a1">
+                <video muted autoplay width="80%" height="540" controls="controls" > 
+                  <source src="https://f47787ede7aa44658b6515e3cf83834a.v.smtcdns.com/vhot2.qqvideo.tc.qq.com/Aik0LsFi97YBFc1OCoTPVnB1_Ptbnp1WuF3LsmBrfsbA/B_P2DAJVW595LrQTsAd71VTsj_2IB0u5tzlPdSzZiT8rE/svp_50069/gzc_1000035_0b53nyah6aaa4aajwmncczsjk3wdp5xaa72a.f622.mp4?sdtfrom=v1010&guid=2194261933d6bd11&vkey=F5161D039A89BC46223BCA4AD3C6C51808F4A26CACA9C4F94CBE9354A67A8153C583EE0E8D6A9082E10193A62D2F993CFDFEB7D3FEE0AEBBF138CDC6A284AC26A28E3A900127BA63E74E3DBE10457500474045FAD408F0056B4AAB2384AD3F6E12661A9B0F6CDF406B07DF6617518A1F5C981C3F17A27EBBBA80B09AC2F9FCCA"  type="video/mp4">
+                </video>
+              </div>
+              <div class="content">
+                <div class="wrapper">
+                    <div class="light"><i></i></div>
+                    <hr class="line-left">
+                    <hr class="line-right">
+                    <div class="main">
+                        <h1 class="title">项目制作历程</h1>
+                        <div class="year">
+                            <h2><a href="#">2023年2月<i></i></a></h2>
+                            <div class="list">
+                                <ul>
+                                    <li class="cls highlight">
+                                        <p class="date">2月23日</p>
+                                        <p class="intro">首次构想主题</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>购物商业网站</p>
+                                            <p>中国航空简介网站</p>
+                                            <p>中国解放军简介网站</p>
+                                            <p>音乐赏析网站</p>
+                                            <p>中国各个城市简介网站</p>
+                                            <p>中国脱贫攻坚历程网站</p>
+                                        </div>
+                                    </li>
+                                   
+                                    <li class="cls">
+                                        <p class="date">2月25日</p>
+                                        <p class="intro">筛选定稿</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>中国航空简介网站</p>
+                                            <p>中国各个城市简介网站</p>
+                                            <p>中国脱贫攻坚历程网站</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">2月26日</p>
+                                        <p class="intro">拟定基本架构 中国航空简介网站：</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>首页:轮番图·宣传片·框架及呈现</p>
+                                            <p>航空风采:3 7布局·内容图片一体化</p>
+                                            <p>红色记忆:基于重庆简介项目做调整删改</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">2月26日</p>
+                                        <p class="intro">拟定基本架构 中国各个城市简介网站：</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>首页:大图·概况全部主题</p>
+                                            <p>旅游指南:三级导航栏，概括各个城市旅游攻略</p>
+                                            <p>名胜古迹:选取代表地·筑介绍</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">2月28日</p>
+                                        <p class="intro">拟定基本架构 中国脱贫攻坚历程网站：</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>首页：历程与艰辛</p>
+                                            <p>我们胜利了:成果</p>
+                                        </div>
+                                    </li>
+                           
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="year">
+                            <h2><a href="#">2023年3月<i></i></a></h2>
+                            <div class="list">
+                                <ul>
+                                    <li class="cls">
+                                        <p class="date">3月14</p>
+                                        <p class="intro">展示项目突变</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>由网页设计,转视频剪辑和网页设计，展示没有确定下来,不管做什么,都得做好,弥补去年的遗憾</p>
+                                           
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">3月16</p>
+                                        <p class="intro">视频指导老师歇菜</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>指导老师不行，确立项目，网页设计</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">3月16</p>
+                                        <p class="intro">着手准备</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>确立了主题,由中国航空转为中国航天。<br>网页布局,拟定草稿</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">3月18</p>
+                                        <p class="intro">板块确立</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>分为:首页·1970·科普与人物·红色记忆·制作团队</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls highlight">
+                                        <p class="date">3月21</p>
+                                        <p class="intro">解决实际问题</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>导航栏样式迟迟确定不下来,外在因素太多</p>
+                                            <p>整合意见,融合调整</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls highlight">
+                                        <p class="date">3月24</p>
+                                        <p class="intro">创立创新</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>布局特色,样式特色内容新颖</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">3月24</p>
+                                        <p class="intro">寻找灵感</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>游览各大网站</p>
+                                            <p>生活中寻找灵感</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">3月30</p>
+                                        <p class="intro">确立基本目标·</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>脑海有了基本构想,实现构想,大胆尝试</p>
+                                        </div>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="year">
+                            <h2><a href="#">2023年4月<i></i></a></h2>
+                            <div class="list">
+                                <ul>
+                                    <li class="cls">
+                                        <p class="date">4月17</p>
+                                        <p class="intro">顿悟</p>
+                                        <p class="version">&nbsp;</p>
+                                        <div class="more">
+                                            <p>内由心声</p>
+                                        </div>
+                                    </li>
+                                    <li class="cls">
+                                        <p class="date">4月28</p>
+                                        <p class="intro">完成改善</p>
+                                        <p class="version">&nbsp;</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+              <script type="text/javascript" src="lc/js/jquery.min.js"></script>
+              <script>
+                $(".main .year .list").each(function(e, target){
+	var $target=  $(target),
+	$ul = $target.find("ul");
+	$target.height($ul.outerHeight()), $ul.css("position", "absolute");
+}); 
+$(".main .year>h2>a").click(function(e){
+	e.preventDefault();
+	$(this).parents(".year").toggleClass("close");
+});
+              const imgContent = document.querySelectorAll('.img-content-hover');
+              
+              function showImgContent(e) {
+                for(var i = 0; i < imgContent.length; i++) {
+                  x = e.pageX;
+                  y = e.pageY;
+                  imgContent[i].style.transform = `translate3d(${x}px, ${y}px, 0)`;
+                }
+              };
+              
+              document.addEventListener('mousemove', showImgContent);</script>
+              
+        </div>
+    </body>
+</html>
